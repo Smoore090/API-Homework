@@ -41,15 +41,10 @@ $(document).ready(function() {
                         $("#gifs-go-here").prepend("<img src='" + response.data[i].images.downsized.url + "'>");
                     }
                 })
-                    
-                });
-    /*
-        //add still/animated thing here.....
+             });
+   
     $(".gif").on("click", function() {
-      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-      var state = $(this).attr("data-state");
-      
-      // If image is still, animate on click, else (if it's animated) make still on click.
+      var state = $(this).attr("data-state")
       if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
@@ -58,7 +53,4 @@ $(document).ready(function() {
         $(this).attr("data-state", "still");
       }
     });
-    */
-    
-    
         });
