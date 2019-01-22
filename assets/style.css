@@ -1,0 +1,27 @@
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+#buttons-go-here {
+    padding: 20px; margin: 10px;
+  }
+#add-button {
+    padding: 20px;
+  }
+#submit-button {
+    margin: 15px;
+  }
+.btn {
+    line-height: 10;
+  }
+.container {
+        text-align: center;
+        padding-top: 50px;
+  }
+* {
+    box-sizing: border-box;
+  }
+body {
+    padding-top: 50px;
+    text-align: center;
+  }
