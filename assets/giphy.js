@@ -36,15 +36,24 @@ $(document).ready(function() {
             $.ajax({url:queryURL, method: "GET"})
                 .done(function(response){
                     console.log(response);
-                    for (var i=0; i < response.data.length; i++){
+                    var results = response.data;
+                    console.log(results);
+                    for (var i=0; i < results.length; i++){
+                        var image =$("<img>").addClass("gif");
+                        image.attr("src", results[i].images.fixed_height_still.url);
+                        image.attr("data-still", results[i].images.fixed_height_still.url);
+                        image.attr("data-state", "still");
+                        image.attr("data-animate", results[i].images.fixed_height.url);
                         $("#gifs-go-here").prepend("<p>Rating: " + response.data[i].rating+"<p>");
-                        $("#gifs-go-here").prepend("<img src='" + response.data[i].images.downsized.url + "'>");
+                        $("#gifs-go-here").prepend(image);
                     }
                 })
-             });
-   
-    $(".gif").on("click", function() {
-      var state = $(this).attr("data-state")
+            });
+    
+            
+    $(document).on("click", ".gif", function() {
+      var state = $(this).attr("data-state");
+      console.log(state);
       if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
@@ -53,4 +62,7 @@ $(document).ready(function() {
         $(this).attr("data-state", "still");
       }
     });
+    
+    
+    
         });
